@@ -39,6 +39,9 @@ class Program
             Console.WriteLine("\ts - Subtract");
             Console.WriteLine("\tm - Multiply");
             Console.WriteLine("\td - Divide");
+            Console.WriteLine("\tf - Factorial");
+            Console.WriteLine("\tt - Triangle Area");
+            Console.WriteLine("\tc - Circle Area");
             Console.Write("Your option? ");
             string op = Console.ReadLine();
             try

@@ -26,6 +26,12 @@
                 case "f":
                     result = Factorial(num1);
                     break;
+                case "t":
+                    result = AreaOfTriangle(num1, num2);
+                    break;
+                case "c":
+                    result = AreaOfCircle(num1);
+                    break;
                 // Return text for an incorrect option entry.
                 default:
                     break;
