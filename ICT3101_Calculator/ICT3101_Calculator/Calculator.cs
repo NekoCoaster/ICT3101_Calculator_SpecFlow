@@ -1,4 +1,5 @@
-﻿namespace ICT3101_Calculator
+﻿//Calculator.cs
+namespace ICT3101_Calculator
 {
     public class Calculator
     {
@@ -31,6 +32,13 @@
                     break;
                 case "c":
                     result = AreaOfCircle(num1);
+                    break;
+
+                case "mtbf":
+                    result = MTBF(num1, num2);
+                    break;
+                case "avail":
+                    result = Availability(num1, num2);
                     break;
                 // Return text for an incorrect option entry.
                 default:
@@ -127,5 +135,24 @@
             }
             return Math.PI * Math.Pow(radius, 2);
         }
+
+        public double MTBF(double totalOperationalTime, double numberOfFailures)
+        {
+            if (numberOfFailures <= 0)
+            {
+                throw new ArgumentException("Number of failures must be greater than zero.");
+            }
+            return totalOperationalTime / numberOfFailures;
+        }
+
+        public double Availability(double mtbf, double mttr)
+        {
+            if (mtbf < 0 || mttr < 0)
+            {
+                throw new ArgumentException("MTBF and MTTR cannot be negative.");
+            }
+            return mtbf / (mtbf + mttr);
+        }
+
     }
 }

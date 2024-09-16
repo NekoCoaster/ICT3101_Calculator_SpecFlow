@@ -1,4 +1,5 @@
-﻿using ICT3101_Calculator;
+﻿// Program.cs
+using ICT3101_Calculator;
 
 class Program
 {
@@ -21,7 +22,7 @@ class Program
             double cleanNum1 = 0;
             while (!double.TryParse(numInput1, out cleanNum1))
             {
-                Console.Write("This is not valid input. Please enter an integer value: ");
+                Console.Write("This is not valid input. Please enter a numeric value: ");
                 numInput1 = Console.ReadLine();
             }
             // Ask the user to type the second number.
@@ -30,7 +31,7 @@ class Program
             double cleanNum2 = 0;
             while (!double.TryParse(numInput2, out cleanNum2))
             {
-                Console.Write("This is not valid input. Please enter an integer value: ");
+                Console.Write("This is not valid input. Please enter a numeric value: ");
                 numInput2 = Console.ReadLine();
             }
             // Ask the user to choose an operator.
@@ -42,8 +43,11 @@ class Program
             Console.WriteLine("\tf - Factorial");
             Console.WriteLine("\tt - Triangle Area");
             Console.WriteLine("\tc - Circle Area");
+            Console.WriteLine("\tmtbf - MTBF");
+            Console.WriteLine("\tavail - Availability");
             Console.Write("Your option? ");
             string op = Console.ReadLine();
+
             try
             {
                 result = _calculator.DoOperation(cleanNum1, cleanNum2, op);
@@ -51,12 +55,16 @@ class Program
                 {
                     Console.WriteLine("This operation will result in a mathematical error.\n");
                 }
-                else Console.WriteLine("Your result: {0:0.##}\n", result);
+                else
+                {
+                    Console.WriteLine("Your result: {0:0.##}\n", result);
+                }
             }
             catch (Exception e)
             {
-                Console.WriteLine("Oh no! An exception occurred trying math.\n - Details: " + e.Message);
+                Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
             }
+
             Console.WriteLine("------------------------\n");
             // Wait for the user to respond before closing.
             Console.Write("Press 'q' and Enter to quit the app, or press any other key and Enter to continue: ");
