@@ -74,12 +74,20 @@
 
         public double Divide(double num1, double num2)
         {
-            if (num1 == 0 || num2 == 0)
+            if (num2 == 0)
             {
-                throw new ArgumentException("Invalid input");
+                if (num1 == 0)
+                {
+                    return 1; // As per your scenario: 0 divided by 0 should return 1
+                }
+                else
+                {
+                    return double.PositiveInfinity; // Dividing by zero returns positive infinity
+                }
             }
-            return (num1 / num2);
+            return num1 / num2;
         }
+
 
         // New Factorial function
         public double Factorial(double num1)
