@@ -1,23 +1,21 @@
 ﻿// CommonStepDefinitions.cs
-using ICT3101_Calculator;
-using SpecFlowCalculatorTests.Support;
-
 namespace SpecFlowCalculatorTests.StepDefinitions
 {
     [Binding]
     public sealed class CommonStepDefinitions
     {
-        private readonly CalculatorContext _context;
 
-        public CommonStepDefinitions(CalculatorContext context)
+        // Placeholder class for common steps, so as to satisfy the build requirements for a "I have a calculator" step
+        public CommonStepDefinitions()
         {
-            _context = context;
+
         }
 
         [Given(@"I have a calculator")]
         public void GivenIHaveACalculator()
         {
-            _context.CalculatorInstance = new Calculator();
+            // This step is a placeholder, and does not need to do anything
+            // This is bypassed by having the Calculator instance directly injected into the step definitions themselves
         }
     }
 }

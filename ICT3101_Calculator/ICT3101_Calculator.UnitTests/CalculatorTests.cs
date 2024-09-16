@@ -247,7 +247,7 @@ namespace ICT3101_Calculator.UnitTests
         [Test]
         [TestCase(0, 0, 1)]
         [TestCase(0, 10, 0)]
-        [TestCase(10, 0, 10)]
+        [TestCase(10, 0, double.PositiveInfinity)]
         public void Divide_WithZerosAsInput_ResultInCustomValue(double num1, double num2, double result)
         {
             // Act
