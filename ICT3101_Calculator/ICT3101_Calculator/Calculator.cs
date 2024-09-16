@@ -4,7 +4,7 @@ namespace ICT3101_Calculator
     public class Calculator
     {
         public Calculator() { }
-        public double DoOperation(double num1, double num2, string op)
+        public double DoOperation(double num1, double num2, string op, double num3 = 0) // Added num3 for the new functions
         {
             double result = double.NaN; // Default value
 
@@ -39,6 +39,12 @@ namespace ICT3101_Calculator
                     break;
                 case "avail":
                     result = Availability(num1, num2);
+                    break;
+                case "cfi":
+                    result = CurrentFailureIntensity(num1, num2, num3);
+                    break;
+                case "anef":
+                    result = AverageExpectedFailures(num1, num2, num3);
                     break;
                 // Return text for an incorrect option entry.
                 default:
@@ -152,6 +158,25 @@ namespace ICT3101_Calculator
                 throw new ArgumentException("MTBF and MTTR cannot be negative.");
             }
             return mtbf / (mtbf + mttr);
+        }
+        public double CurrentFailureIntensity(double lambda0, double mu0, double tau)
+        {
+            if (tau < 0)
+            {
+                throw new ArgumentException("Time cannot be negative.");
+            }
+            double exponent = -(lambda0 / mu0) * tau;
+            return lambda0 * Math.Exp(exponent);
+        }
+
+        public double AverageExpectedFailures(double lambda0, double mu0, double tau)
+        {
+            if (tau < 0)
+            {
+                throw new ArgumentException("Time cannot be negative.");
+            }
+            double exponent = -(lambda0 / mu0) * tau;
+            return mu0 * (1 - Math.Exp(exponent));
         }
 
     }
