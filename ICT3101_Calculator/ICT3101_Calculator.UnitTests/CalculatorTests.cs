@@ -227,34 +227,34 @@ namespace ICT3101_Calculator.UnitTests
 
         #endregion
 
-        #region Exception Test Cases
+        #region Divide by 0 results in Infinity Tests
         [Test]
-        public void Divide_WithZerosAsInput_ResultThrowArgumentException()
+        public void Divide_WithZerosAsInput_ResultIsPositiveInfinity()
         {
             // Arrange
-            double num1 = 0;
+            double num1 = 10;
             double num2 = 0;
 
             // Act
-            TestDelegate testDelegate = () => _calculator.Divide(num1, num2);
+            double result = _calculator.Divide(num1, num2);
 
             // Assert
-            Assert.That(testDelegate, Throws.ArgumentException);
+            Assert.That(result, Is.EqualTo(double.PositiveInfinity));
         }
         #endregion
 
         #region Parameterized Test Cases for testing 0 division and Exception Throwing
         [Test]
-        [TestCase(0, 0)]
-        [TestCase(0, 10)]
-        [TestCase(10, 0)]
-        public void Divide_WithZerosAsInput_ResultThrowArgumentException(double num1, double num2)
+        [TestCase(0, 0, 1)]
+        [TestCase(0, 10, 0)]
+        [TestCase(10, 0, 10)]
+        public void Divide_WithZerosAsInput_ResultInCustomValue(double num1, double num2, double result)
         {
             // Act
-            TestDelegate testDelegate = () => _calculator.Divide(num1, num2);
+            double actualResult = _calculator.Divide(num1, num2);
 
             // Assert
-            Assert.That(testDelegate, Throws.ArgumentException);
+            Assert.That(actualResult, Is.EqualTo(result));
         }
         #endregion
 
