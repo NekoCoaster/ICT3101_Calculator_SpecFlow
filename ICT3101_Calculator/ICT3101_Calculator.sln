@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICT3101_Calculator", "ICT31
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICT3101_Calculator.UnitTests", "ICT3101_Calculator.UnitTests\ICT3101_Calculator.UnitTests.csproj", "{6292DA00-D8D3-4873-ADFA-30DE656ED454}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculatorTests", "SpecFlowCalculatorTests\SpecFlowCalculatorTests.csproj", "{CFC8184F-DB17-4A13-9A1E-494B6B1370E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6292DA00-D8D3-4873-ADFA-30DE656ED454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6292DA00-D8D3-4873-ADFA-30DE656ED454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6292DA00-D8D3-4873-ADFA-30DE656ED454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC8184F-DB17-4A13-9A1E-494B6B1370E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC8184F-DB17-4A13-9A1E-494B6B1370E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC8184F-DB17-4A13-9A1E-494B6B1370E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC8184F-DB17-4A13-9A1E-494B6B1370E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
