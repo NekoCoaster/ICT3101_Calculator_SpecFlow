@@ -108,6 +108,49 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add zeros for special cases")]
+        [NUnit.Framework.CategoryAttribute("Addition")]
+        [NUnit.Framework.TestCaseAttribute("1", "11", "7", null)]
+        [NUnit.Framework.TestCaseAttribute("10", "11", "11", null)]
+        [NUnit.Framework.TestCaseAttribute("11", "11", "15", null)]
+        public void AddZerosForSpecialCases(string value1, string value2, string value3, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Addition"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("value1", value1);
+            argumentsOfScenario.Add("value2", value2);
+            argumentsOfScenario.Add("value3", value3);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add zeros for special cases", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 15
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 16
+ testRunner.Given("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 17
+ testRunner.When(string.Format("I have entered {0} and {1} into the calculator and press add", value1, value2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 18
+ testRunner.Then(string.Format("the result should be {0}", value3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
