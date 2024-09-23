@@ -179,5 +179,44 @@ namespace ICT3101_Calculator
             return mu0 * (1 - Math.Exp(exponent));
         }
 
+        // New Method: Calculate Defect Density
+        public double DefectDensity(double totalDefects, double totalSSI)
+        {
+            if (totalSSI <= 0)
+            {
+                throw new ArgumentException("Total SSI must be greater than zero.");
+            }
+            return totalDefects / totalSSI;
+        }
+
+        // New Method: Calculate New Total SSI
+        public double NewTotalSSI(double previousSSI, double newSSI)
+        {
+            // Allow negative newSSI for code reduction scenarios
+            return previousSSI + newSSI;
+        }
+
+        // New Method: Musa Logarithmic Model Failure Intensity
+        public double MusaLogModelFailureIntensity(double lambda0, double phi, double t)
+        {
+            if (t < 0)
+            {
+                throw new ArgumentException("Execution time cannot be negative.");
+            }
+            // Correct calculation
+            return lambda0 * Math.Exp(-phi * t);
+        }
+
+
+        // New Method: Musa Logarithmic Model Expected Failures
+        public double MusaLogModelExpectedFailures(double N0, double phi, double t)
+        {
+            if (t < 0)
+            {
+                throw new ArgumentException("Execution time cannot be negative.");
+            }
+            return N0 * (1 - Math.Exp(-phi * t));
+        }
+
     }
 }
