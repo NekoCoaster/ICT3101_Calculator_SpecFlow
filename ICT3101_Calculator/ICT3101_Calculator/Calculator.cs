@@ -217,6 +217,23 @@ namespace ICT3101_Calculator
             }
             return N0 * (1 - Math.Exp(-phi * t));
         }
+        // Lab 4: Dependency Injection and mocking
+        public double GenMagicNum(double input, string filePath = "MagicNumbers.txt")
+        {
+            double result = 0;
+            int choice = Convert.ToInt16(input);
+            // Dependency------------------------------
+            FileReader getTheMagic = new FileReader();
+            //----------------------------------------
+            string[] magicStrings = getTheMagic.Read(filePath);
+            if ((choice >= 0) && (choice < magicStrings.Length))
+            {
+                result = Convert.ToDouble(magicStrings[choice]);
+            }
+            result = (result > 0) ? (2 * result) : (-2 * result);
+            return result;
+        }
+
 
     }
 }
