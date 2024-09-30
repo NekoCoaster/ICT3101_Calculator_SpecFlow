@@ -52,8 +52,12 @@ class Program
 
                 try
                 {
-                    // Call the GenMagicNum method
-                    result = _calculator.GenMagicNum(cleanNum1);
+                    // Create an instance of FileReader
+                    IFileReader fileReader = new FileReader();
+
+                    // Call the GenMagicNum method with the injected dependency
+                    result = _calculator.GenMagicNum(cleanNum1, fileReader);
+
                     Console.WriteLine("Your magic number is: {0:0.#####}\n", result);
                 }
                 catch (Exception e)
